@@ -6,6 +6,7 @@
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
     crossorigin="anonymous">
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/contact_us.css">
 </head>
 <body>
   <div id="root">
@@ -46,8 +47,8 @@
         <div>
           <div class="row">
             <div class="col-md-12 header-text">
-              <h3>Curriculum</h3>
-              <p>We have tailored the curriculum to enable and empower you with the right skill sets to thrive.</p>
+              <h3>Syllabus</h3>
+              <p>Enable and empower you with the right skill sets to thrive.</p>
             </div>
           </div>
           <div class="container desktop course-detail">
@@ -103,7 +104,39 @@
           </div>
         </div>
       
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfrNMTfenkDJ2uGz8jHrmd16Ro1ZDt27YfBjytrK-AQ_YBMAA/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <!--<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfrNMTfenkDJ2uGz8jHrmd16Ro1ZDt27YfBjytrK-AQ_YBMAA/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
+
+        <h3>Contact Form</h3>
+
+        <div class="container">
+          <form action="/contact_us" method="POST">
+            <label for="fname">Name</label>
+            <input type="text" id="fname" name="name" placeholder="Your name..">
+            <input type="text" id="mobile" name="mobile" placeholder="mobile number">
+            <input type="text" id="email" name="email" placeholder="Email">
+            <input type="text" id="passed_out_year" name="passed_out_year" placeholder="Passed out year">
+
+            <h5>We are currently working with Btech/BE students only</h5>
+            <label for="branch">Btech/BE Branch</label>
+            <select id="branch" name="branch">
+              <option value="cse">Computer Science</option>
+              <option value="it">Information Technoloy</option>
+              <option value="ec">Electronic Communications</option>
+              <option value="ee">Electrical</option>
+              <option value="mech">Mechannical</option>
+              <option value="civil">Civil</option>
+              <option value="chem">Chemical</option>
+              <option value="other">Chemical</option>
+            </select>
+            <input type="text" id="state" name="state" placeholder="State">
+            <input type="text" id="current_city" name="current_city" placeholder="Current City">
+
+            <label for="story">Write about you in any language preferably English, Hindi, Telugu</label>
+            <textarea id="story" name="story" placeholder="Write something.." style="height:200px"></textarea>
+
+            <input type="submit" value="Submit">
+          </form>
+        </div>
 
         <div class="socialMedia-cl">
           <div class="container contain-cl">
