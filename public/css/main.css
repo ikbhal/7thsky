@@ -86,3 +86,23 @@ padding: 85px 0;
     font-size: 18px;
     padding: 1rem;
 }
+
+/*############begin of navbar color change */
+.navbar-custom {
+    background-color: #28a745;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,.8);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+}
+/* ############end of color change of nabar */
