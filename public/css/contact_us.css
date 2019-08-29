@@ -21,3 +21,11 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #45a049;
 }
+
+/* vertical align flip cards*/
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
