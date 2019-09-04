@@ -3,3 +3,5 @@ public/uploads/*
 !public/uploads/.gitkeep
 *-lock.json
 db/7thsky/student
+debug
+.vscode
