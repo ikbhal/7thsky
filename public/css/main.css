@@ -93,3 +93,9 @@ a {
 a:hover {
     color: #096e19;
 }
+
+.line-divider {
+  background-color: #7CFC00;
+  height: 5px;
+  margin-top: 10px;
+}
