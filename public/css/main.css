@@ -99,3 +99,9 @@ a:hover {
   height: 5px;
   margin-top: 10px;
 }
+
+.line-divider-thin {
+    background-color:black;
+    height: 1px;
+    margin-top: 10px;
+}
