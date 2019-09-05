@@ -4,6 +4,10 @@ What is the problem?
 Lots of freshers college are not able to write sum of 10 numbers program.
 
 What are the existing solution
+There lot of learning sources, but not huge impact
+No motivation, consistency, not real time technologies, lots of confusion
+not job ready
+
 They learn codding from 
 Computer institute
 Youtube videos
@@ -63,8 +67,65 @@ FAQ
  Software developer FAQ
  Facilitator FAQ
 
+Other Partner FAQ
+we like partner computer institute , college, job consultant, HR.
+
+#Facilatator FAQ 
+what is Facilitator
+He will be interacting with both students, softare developer
+to make sure both engage, learn, have good time.
+
+I am not software developer, can i be facilitator?
+There is no restriction for being software developer.
+we accept any one who have passion to solve unemployment problem
+
+Will i get paid money?
+No
+
+
+
+
+Software developer FAQ
+
+I dont have time to coach student?
+You can guide student any time for 10 minutes to 30 minutes 
+ex: 10 minutes any time in  day
+30 minutes in weekend
+
+Will my personal information phone number, email shared with student?
+No
+
+what can we do in 10 minutes
+you can share youtube videos url, tutorials, courses
+code review
+explain a  concept in 10 minutes -> even if it is not possible
+ one line explainer
+tell how you work in company
+motivate them , how to you struggle in your early career. 
+
+
+Will coaching student effect my company work dead lines
+ we wont allow you to coach more than 10 minutes in working day 
+   it wont effect your work
+
+Do i need to give commitment?
+No, you can start with 10 minutes, later
+you can dor it for 2 days  in week for couple of days   
+you can increase based on availability
+but we suggest you should commit 10 minutes a week
+
+If you want to guid more , how ?
+ You can only guid him in weekend.
+ if you need more time, you can guide from 8pm to 9pm, early morning 6am to 8am
+Will i get money?
+No its social service    
+
 
 Student FAQ
+----
+Do i need to pay money?
+No, we commitment from you
+
 Will I get job Immediately?
 No
 
@@ -73,4 +134,32 @@ learn , practice, build profile, then more chances of getting job.
 
 I am student do i need to commitment on this.
 Yes
+
+What is daily commitment expected?
+Minimum 30 minutes
+
+What are the requriement?
+Laptop, mobile phone, internet
+
+What will i learn in 3 months?
+backend : node.js , express , mongodb
+front end: html, css, react js
+
+What is minimum thing i can expect?
+You will be able to code small programs
+
+Will there be any projects?
+yes, you will be doing incremental projects
+weekly basis
+
+Do i need to update what status daily?
+software develpoer suggest to practice, read , write code 
+We will be expecting what you did yester day,
+what you will be doing today
+
+Can i give feed back to software developer?
+yes, you have to feedback how is guiding
+what you like, where he can improve, what you need now urgent
+
+
 
