@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Student Contact Form</title>
+  <title>Code Coach - Connect Freshers with Software developer for motivation and guidance</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" 
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -111,7 +111,7 @@
                 <div class="col-md-6">
                   <iframe width="560" height="315" src="https://www.youtube.com/embed/k4Do3JSBflc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>                   
-                <div class="col-mid-6" >
+                <div class="col-md-6" >
                    <div class="row" >
                     <h2>What is the benefit for student?</h2>
                     <ul style="list-style:none">
@@ -250,44 +250,85 @@
       
         <!--<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfrNMTfenkDJ2uGz8jHrmd16Ro1ZDt27YfBjytrK-AQ_YBMAA/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
 
+        <div class="row" style="width:100%;height: 50px;">
+            <div class="line-divider">&nbsp</div>
+        </div>
         <div class="container">
-          <div class="contact_us_form_wrapper">
-            <h3>Student Contact Form</h3>
-            <form id ="contact_us_form" action="/contact_us" method="POST">
-              <label for="fname">Name</label>
-              <input type="text" id="fname" name="name" placeholder="Your name..">
-              <input type="text" id="mobile" name="mobile" placeholder="mobile number">
-              <input type="text" id="email" name="email" placeholder="Email">`
-              <input type="text" id="passed_out_year" name="passed_out_year" placeholder="Passed out year">
+          <div class="row">
 
-              <h5>We are currently working with Btech/BE students only</h5>
-              <label for="branch">Btech/BE Branch</label>
-              <select id="branch" name="branch">
-                <option value="cse">Computer Science</option>
-                <option value="it">Information Technoloy</option>
-                <option value="ec">Electronic Communications</option>
-                <option value="ee">Electrical</option>
-                <option value="mech">Mechannical</option>
-                <option value="civil">Civil</option>
-                <option value="chem">Chemical</option>
-                <option value="other">Chemical</option>
-              </select>
-              <input type="text" id="state" name="state" placeholder="State">
-              <input type="text" id="current_city" name="current_city" placeholder="Current City">
-
-              <label for="story">Write about you in any language preferably English, Hindi, Telugu</label>
-              <textarea id="story" name="story" placeholder="Write something.." style="height:200px"></textarea>
-
-              <input type="submit" value="Submit">
-            </form>
-          </div>
-          <div class="contact_us_form_response">
-            <h3>Thanks for contacting Us.</h3>
-            <p>We will reach you soon.</p>
-            <p>In case we did not follow in a day. Call on 9901014560 after 5pm.</p>
-          </div>
+            <div class="col-md-6">
+              <div class="contact_form">
+                <div class="student_contact_us_form_wrapper">
+                    <h3>Student Contact Form</h3>
+                    <form id ="student_contact_us_form" action="/student_contact_us" method="POST">
+                      <input type="text" id="fname" name="name" placeholder="Your name..">
+                      <input type="text" id="mobile" name="mobile" placeholder="mobile number">
+                      <input type="text" id="email" name="email" placeholder="Email">`
+                      <input type="text" id="passed_out_year" name="passed_out_year" placeholder="Passed out year">
+      
+                      <label for="branch">Btech/BE Branch</label>
+                      <select id="branch" name="branch">
+                        <option value="cse">Computer Science</option>
+                        <option value="it">Information Technoloy</option>
+                        <option value="ec">Electronic Communications</option>
+                        <option value="ee">Electrical</option>
+                        <option value="mech">Mechannical</option>
+                        <option value="civil">Civil</option>
+                        <option value="chem">Chemical</option>
+                        <option value="other">Chemical</option>
+                      </select>
+                      <input type="text" id="state" name="state" placeholder="State">
+                      <input type="text" id="current_city" name="current_city" placeholder="Current City">
+      
+                      <label for="story">Write about you in any language preferably English, Hindi, Telugu</label>
+                      <textarea id="story" name="story" placeholder="Write something.." style="height:200px"></textarea>
+      
+                      <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="student_contact_us_form_response">
+                  <h3>Thanks for contacting Us.</h3>
+                  <p>We will reach you soon.</p>
+                  <p>In case we did not follow in a day. Call on 9901014560 after 5pm.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="contact_form">
+                <div class="coach_contact_us_form_wrapper">
+                  <h3>Coach Contact Form</h3>
+                  <form id ="coach_contact_us_form" action="/coach_contact_us" method="POST">
+                    <input type="text" id="fname" name="name" placeholder="Your name..">
+                    <input type="text" id="mobile" name="mobile" placeholder="mobile number">
+                    <input type="text" id="email" name="email" placeholder="Email">`
+                    <input type="text" id="technologies" name="technologies" placeholder="Technogies ex: JavaReact Js, node.js , Mongodb, Java">
+    
+                    <input type="text" id="minutes_per_week" name="minutes per week" placeholder="Total no of minutes volunteer per week: say 30 minutes"/>
+                    <input type="text" id="state" name="state" placeholder="State">
+                    <input type="text" id="current_city" name="current_city" placeholder="Current City">
+    
+                    <label for="story">Write about you in any language preferably English, Hindi, Telugu</label>
+                    <textarea id="story" name="story" placeholder="Write something.." style="height:200px"></textarea>
+    
+                    <input type="submit" value="Submit">
+                  </form>
+                </div>
+                <div class="coach_contact_us_form_response">
+                  <h3>Thanks for contacting Us.</h3>
+                  <p>We will reach you soon.</p>
+                  <p>In case we did not follow in a day. Call on 9901014560 after 5pm.</p>
+                </div>
+              </div>
+            </div>
+            
           </div>
         </div>
+        </div>
+
+        <div class="row" style="width:100%;height: 50px;">
+            <div class="line-divider">&nbsp</div>
+        </div>
+
 
         <div class="socialMedia-cl">
           <div class="container contain-cl">
@@ -328,6 +369,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="row" style="width:100%;height: 50px;">
+          <div class="line-divider-thin">&nbsp</div>
       </div>
 
       <div class="footer" style="text-align:center">

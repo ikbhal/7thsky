@@ -11,25 +11,7 @@ var app = express();
 //app.use(express.urlencoded());
 app.use(express.json());
 
-app.post('/contact_us', function(req, res) {
-    // const name = req.body.name || "";
-    // const mobile = req.body.mobile || "";
-    // const email = req.body.email || "";
-    // const passed_out_year = req.body.passed_out_year || "";
-    // const branch = req.body.branch || "";
-    // const state = req.body.state || "";
-    // const current_city = req.body.current_city || ""; 
-    // const story = req.body.story || "";
-
-    // var student = { "name" : name, 
-    //     'mobile' : mobile,
-    //     'email' : email,
-    //     'passed_out_year' : passed_out_year,
-    //     'branch' : branch,
-    //     'state' : state,
-    //     'current_city' : current_city,
-    //     'story' : story
-    // };
+app.post('/student_contact_us', function(req, res) {
 
     var student = req.body;
     var collection = db.collection("student");
@@ -42,8 +24,22 @@ app.post('/contact_us', function(req, res) {
             console.log("Sever Error during saveing contact us details");
             res.status(500).error({"error": "internal server error"});
         }
-        //res.sendFile("fileName");
-        
+  })
+});
+
+app.post('/coach_contact_us', function(req, res) {
+
+    var coach = req.body;
+    var collection = db.collection("coach");
+    collection.insert([coach], {w:1}, function(err, result) {
+        var fileName  = path.resolve(__dirname , 'public', 'index.html');
+        if (err == null) {
+            console.log("Thanks for Contacting. We will follow soon");  
+            res.json({ok:true});          
+        } else {
+            console.log("Sever Error during saveing contact us details");
+            res.status(500).error({"error": "internal server error"});
+        }
   })
 });
 
