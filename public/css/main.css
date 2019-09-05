@@ -101,16 +101,11 @@ a:hover {
 }
 
 .line-divider-thin {
-    background-color:black;
+    background-color:#7CFC00;
     height: 1px;
     margin-top: 10px;
 }
 
-.line-divider-thin-green {
-    background-color:7CFC00;
-    height: 1px;
-    margin-top: 10px;
-}
 .contact_form{
     width:300px;
 }
