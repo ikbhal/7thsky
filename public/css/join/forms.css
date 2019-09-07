@@ -1,0 +1,14 @@
+.home-hero-signup .form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: inherit;
+    text-align: left;
+}
+
+.home-hero-signup .form-control-note {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #6a737d;
+}
