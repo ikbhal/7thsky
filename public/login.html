@@ -1,0 +1,59 @@
+<html>
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>      
+</head>    
+<body>
+<h1 class="h000-mktg text-white lh-condensed-ultra mb-3">Built for solving Unemployment problem</h1>
+<p class="lead-mktg mb-4">
+    7thSky is a coaching platform inspired by the way you work. From open source to business, 
+    you can coach the students and review code, manage projects, and build software alongside many developers.
+</p>
+<form action="/create" method="POST">
+    <dl class="form-group">
+        <dt class="input-label">
+            <label class="form-label" for="user[login]">Username</label>
+        </dt>
+        <dt>
+            <input class="form-control" type="text" name="user[login]" id="user[login]" autocomplete="off">
+        </dt>
+    </dl>
+
+    <dl class="form-group">
+        <dt class="input-label">
+            <label class="form-label" for="user[email]">Email</label>
+        </dt>
+        <dt>
+            <input class="form-control" type="text" name="user[email]" id="user[email]" autocomplete="off">
+        </dt>
+    </dl>
+
+    <dl class="form-group">
+        <dt class="input-label">
+            <label class="form-label" for="user[password]">Password</label>
+        </dt>
+        <dt>
+            <input class="form-control" type="text" name="user[password]" id="user[password]" autocomplete="off">
+            <p class="form-control-note text-gray-dark">
+                Make sure it's <span data-more-than-n-chars="">
+                at least 15 characters</span> OR <span data-min-chars="">
+                at least 8 characters</span> <span data-number-requirement="">
+                including a number</span> <span data-letter-requirement="">
+                and a lowercase letter</span>.</p>
+        </dt>
+    </dl>
+    
+    <button class="btn-mktg btn-primary-mktg btn-large-mktg f4 btn-block my-3" 
+        type="submit"
+         data-ga-click="Signup, Attempt, location:home hero">
+         Sign up for 7thSky
+    </button>
+    
+    <p class="form-control-note mb-0 mt-3">
+    By clicking “Sign up for 7thSky, you agree to our Terms of Service  and Privacy Statement. 
+    <span class="js-email-notice"></span>We’ll occasionally send you account related emails.</span>
+    </p>
+</form>
+</body>
+</html>
