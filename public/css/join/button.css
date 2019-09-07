@@ -1,0 +1,32 @@
+.btn-large-mktg {
+    padding: 20px 32px;
+    font-size: 16px;
+}
+
+
+.btn-primary-mktg {
+    background-color: #2ebc4f;
+    border-color: #2ebc4f;
+}
+
+.btn-mktg {
+    display: inline-block;
+    padding: 16px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #1074e7;
+    border: 1px solid #1074e7;
+    border-radius: 3px;
+    transition: .2s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
