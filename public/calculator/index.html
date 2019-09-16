@@ -17,10 +17,13 @@ function calculate() {
 }
 
 function addToHistory() {
-  document.write("days:" +  workingDaysPerMonth 
+  var node = document.createElement("LI");                 // Create a <li> node
+  var textnode = document.createTextNode("days:" +  workingDaysPerMonth 
     "; hours per day = " + workingHoursPerDay	 
     "; Per Hour Charge = " + perHourCharge
-    "; Total = " + total);		 
+    "; Total = " + total);         // Create a text node
+  node.appendChild(textnode);                              // Append the text to <li>
+  document.getElementById("results_list").appendChild(node);     // Append <li> to <ul> with id="myList"
 }
 	</script>
 	</head>
