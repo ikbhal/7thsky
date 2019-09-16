@@ -3,10 +3,14 @@
 	<head>
 	<script>
 function calculate() {
-  var hoursPerDay = 4;
+  var workingDaysPerMonth = 30;
+  var workingHoursPerDay = 4;
   var perHourCharge = 10;
-  var daysPerMonth = 30;
-  var total = hoursPerDay * perHourCharge * daysPerMonth;
+  workingHoursPerDay = document.getElementById("workingHoursPerDay").value;
+  workingHoursPerDay = document.getElementById("workingHoursPerDay").value;
+  perHourCharge = document.getElementById("perHourCharge").value;
+	
+  var total = workingDaysPerMonth * workingHoursPerDay * perHourCharge;
   alert("You will earn " + total);
 }
 	</script>
@@ -23,10 +27,16 @@ function calculate() {
 		<p>Requirement: Internet + laptop</p>
 
 		<form >
-			<input type="text" name="hrs_per_day" value="4" placeholder=" total hours per day"/><br>
+			<input type="text" name="workingDaysPerMonth" value="4" id ="workingDaysPerMonth" 
+			       placeholder=" total hours per day"/>
+			<br>
+			<input type="text" name="workingHoursPerDay" value="4" id ="workingHoursPerDay" 
+			       placeholder=" total hours per day"/>
+			<br>
 			
-			<input type="text" name="per_hour_chargey" value="10" placeholder="Per Hour Charge"/><br>
-			<input type="text" name="hrs_per_day" value="4" placeholder=" total hours per day"/><br>
+			<input type="text" name="perHourCharge" id="perHourCharge" value="10" 
+			       placeholder="Per Hour Charge"/>
+			<br>
 			<button type="button" onclick="calculate()">Calculate</button>
 		</form>
 
