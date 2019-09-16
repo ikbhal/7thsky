@@ -6,6 +6,10 @@ var workingDaysPerMonth = 30;
 var workingHoursPerDay = 4;
 var perHourCharge = 10;
 var total;
+		
+// build earnig table 		
+earningTable();
+		
 function calculate() {
   workingDaysPerMonth = document.getElementById("workingDaysPerMonth").value;
   workingHoursPerDay = document.getElementById("workingHoursPerDay").value;
@@ -24,6 +28,27 @@ function addToHistory() {
   node.appendChild(textnode);                              // Append the text to <li>
   document.getElementById("results_list").appendChild(node);     // Append <li> to <ul> with id="myList"
 }
+		
+function earningTable() {
+  workingDaysPerMonth = 30;
+  workingHoursPerDay = 4;
+  perHourCharge = 10;
+  total;
+  var localPerHourCharge = perHourCharge; 
+  var perHourChargeStep =5;
+  for(;localPerHourCharge<=60; localPerHourCharge = localPerHourCharge + perHourChargeStep) {
+    var node = document.createElement("LI");                 // Create a <li> node
+    var textnode = document.createTextNode("days:" +  workingDaysPerMonth 
+      + "; hours per day = " + workingHoursPerDay	 
+      + "; Per Hour Charge = " + perHourCharge
+      + "; Total = " + total);
+    node.appendChild(textnode);
+    document.getElementById("earning_list").appendChild(node);
+  }	  
+	  
+}
+		
+	
 	</script>
 	</head>
 	<body>
@@ -54,6 +79,11 @@ function addToHistory() {
 		<div>
 			<h4>Results</h4>
 			<ul id="results_list">
+				
+			</ul>
+			
+			<h4>Earning Table</h4>
+			<ul id="earning_list">
 				
 			</ul>
 		</div>
