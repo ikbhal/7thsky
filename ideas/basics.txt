@@ -1,0 +1,86 @@
+Bismillah Insha allah
+
+Concept -> Text
+every staur day 9am to 5pm 
+basic revision
+
+pre requisite:
+1 week prepartaion min
+
+test pass online -> then come to physical event
+
+online
+concept list
+
+ex:
+
+hello world
+print 
+read
+if
+if else
+switch
+whicle
+for
+function
+class
+object
+inheritance
+
+data structures
+array
+list
+stack
+queue
+tree
+graph
+
+---
+geeks for geeks 
+3 problems
+---
+
+one satruday -> mountblue 
+  interview conduct -> hire student
+---
+for above listed concept
+txt, small program
+online run,
+video how to run
+---
+programming jvascript:
+---
+tools
+githu
+visual studio code
+package dependency
+---
+msic
+hello servier
+---
+=====
+basic english
+small 
+
+---
+javascript syntax memorise 
+shortcut
+-
+---
+keep in 7thsky
+student login 
+read, practice
+---
+meomorize systnax, keyword, function name, 
+---
+1000 words of 
+100 words of basic coding 
+---
+100 basic concepts
+---
+no color
+black, white Text
+--
+flow chart for reach concept
+---
+

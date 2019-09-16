@@ -11,6 +11,35 @@ var app = express();
 //app.use(express.urlencoded());
 app.use(express.json());
 
+//backend
+// create account page
+// input: username, email, password
+app.post('/signup', function(req, res){
+    var user = req.body;
+    console.log("user");
+    console.log(user);
+
+    var collection = db.collection("user");
+    collection.insert([user], {w:1}, function(err, result) {
+        if (err == null) {
+            console.log("Inserted user account");  
+            res.json({ok:true});          
+        } else {
+            console.log("Sever Error during saveing contact us details");
+            res.status(500).error({"error": "internal server error"});
+        }
+  })
+});
+
+app.get('/users', function(req, res){
+    var collection = db.collection("user");
+    collection.findOne({username:'Ikbhal'}, function(err, item) {
+        console.log(item);
+        res.json(item);
+    });
+    res.json({status:"fail"});
+});
+
 app.post('/student_contact_us', function(req, res) {
 
     var student = req.body;
