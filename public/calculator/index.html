@@ -1,7 +1,15 @@
 <html>
 
 	<head>
-	
+	<script>
+function calculate() {
+  var hoursPerDay = 4;
+  var perHourCharge = 10;
+  var daysPerMonth = 30;
+  var total = hoursPerDay * perHourCharge * daysPerMonth;
+  alert("You will earn " + total);
+}
+	</script>
 	</head>
 	<body>
 		<h3>Calculate How much you earn - employee </h3>
@@ -19,7 +27,7 @@
 			
 			<input type="text" name="per_hour_chargey" value="10" placeholder="Per Hour Charge"/><br>
 			<input type="text" name="hrs_per_day" value="4" placeholder=" total hours per day"/><br>
-			<button type="button">Calculate</button>
+			<button type="button" onclick="calculate()">Calculate</button>
 		</form>
 
 	</body>
