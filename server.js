@@ -1,3 +1,4 @@
+var git = require('simple-git')();
 
 var path = require('path');
 // tingo db
@@ -13,6 +14,10 @@ app.use(express.json());
 
 app.get('/ping', function(req, res){
     res.send("pong");
+});
+app.get('/pull', function(req, res) {
+  git.pull('origin', 'dev', {'--no-rebase':null});
+  res.send("pulled");
 });
 //backend
 // create account page
