@@ -46,6 +46,20 @@ function earningTable() {
 	  
 }
 		
+function hourChange(newVal) {
+	perHourCharge = newVal();
+	addToHistory();
+	/*
+	https://stackoverflow.com/questions/18544890/onchange-event-on-input-type-range-is-not-triggering-in-firefox-while-dragging
+<input type="range" min="5" max="10" step="1" 
+	
+   oninput="showVal(this.value)" onchange="showVal(this.value)">
+   
+   function showVal(newVal){
+  document.getElementById("valBox").innerHTML=newVal;
+}
+   */
+}		
 	
 	</script>
 	</head>
@@ -70,7 +84,8 @@ function earningTable() {
 			
 			<input type="text" name="perHourCharge" id="perHourCharge" value="10" 
 			       placeholder="What you charge per hour?"/>
-			<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+			<input type="range" min="1" max="60" value="10" class="slider" id="perHourChargeRange"
+			       onchange="hourChange(this.value)">
 			<br>
 			<button type="button" onclick="calculate()">Calculate</button>
 		</form>
