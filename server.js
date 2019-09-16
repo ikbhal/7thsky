@@ -11,6 +11,9 @@ var app = express();
 //app.use(express.urlencoded());
 app.use(express.json());
 
+app.get('/ping', function(req, res){
+    res.send("pong");
+});
 //backend
 // create account page
 // input: username, email, password
