@@ -31,6 +31,20 @@ app.post('/signup', function(req, res){
   })
 });
 
+// input: email, passsword
+// ouput: success, invalid login, fail
+// hard code testing
+// email: iqbalforall@gmail.com, password: 123
+app.post('/signin', function(req, res) {
+    var email = req.body.email;
+    var password = req.body.password;
+
+    if(email == "iqbalforall@gmail.com" && password == "123") {
+        res.json("success");
+    }else {
+        res.json("fail");
+    }
+});
 app.get('/users', function(req, res){
     var collection = db.collection("user");
     collection.findOne({username:'Ikbhal'}, function(err, item) {
