@@ -34,10 +34,11 @@ function earningTable() {
   var localPerHourCharge = perHourCharge; 
   var perHourChargeStep =5;
   for(;localPerHourCharge<=60; localPerHourCharge = localPerHourCharge + perHourChargeStep) {
+    total = workingDaysPerMonth * workingHoursPerDay * localPerHourCharge;
     var node = document.createElement("LI");                 // Create a <li> node
     var textnode = document.createTextNode("days:" +  workingDaysPerMonth 
       + "; hours per day = " + workingHoursPerDay	 
-      + "; Per Hour Charge = " + perHourCharge
+      + "; Per Hour Charge = " + localPerHourCharge
       + "; Total = " + total);
     node.appendChild(textnode);
     document.getElementById("earning_list").appendChild(node);
