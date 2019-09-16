@@ -2,16 +2,25 @@
 
 	<head>
 	<script>
+var workingDaysPerMonth = 30;
+var workingHoursPerDay = 4;
+var perHourCharge = 10;
+var total;
 function calculate() {
-  var workingDaysPerMonth = 30;
-  var workingHoursPerDay = 4;
-  var perHourCharge = 10;
   workingDaysPerMonth = document.getElementById("workingDaysPerMonth").value;
   workingHoursPerDay = document.getElementById("workingHoursPerDay").value;
   perHourCharge = document.getElementById("perHourCharge").value;
 	
   var total = workingDaysPerMonth * workingHoursPerDay * perHourCharge;
   alert("You will earn " + total);
+  addToHistory();
+}
+
+function addToHistory() {
+  document.write("days:" +  workingDaysPerMonth 
+    "; hours per day = " + workingHoursPerDay	 
+    "; Per Hour Charge = " + perHourCharge
+    "; Total = " + total);		 
 }
 	</script>
 	</head>
@@ -39,6 +48,15 @@ function calculate() {
 			<br>
 			<button type="button" onclick="calculate()">Calculate</button>
 		</form>
+		
+		<div>
+			<h4>Results</h4>
+			<ul id="results_list">
+				
+			</ul>
+		</div>
 
 	</body>
 </html>
+
+
