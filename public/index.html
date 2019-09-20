@@ -10,6 +10,24 @@
     <link rel="stylesheet" href="./css/contact_us.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./js/main.js"></script>
+
+    <!-- chat sectiopn start -->
+    <style>
+      /** { margin: 0; padding: 0; box-sizing: border-box; }*/
+      /*body { font: 13px Helvetica, Arial; }*/
+      form { background: #fff; padding: 3px; /*position: fixed;*/ bottom: 0; width: 100%; border-color: #000; border-top-style: solid; border-top-width: 1px;}
+      form input { border-style: solid; border-width: 1px; padding: 10px; width: 85%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; margin-left: 2%; }
+      #messages { list-style-type: none; margin: 0; padding: 0; height:300px;overflow:scroll;}
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+      #group_chat{ margin:30px;}
+  </style>
+  <script src="../../socket.io/socket.io.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+  <!-- chat sectiopn end -->
+
 </head>
 <body>
   <div id="root">
@@ -37,6 +55,7 @@
                 <ul class="nav navbar-nav navbar-right">
                   <li><a href="#whatyouget">What you get</a></li>
                   <li><a href="#syllabus">Syllabus</a></li>
+                  <li><a href="#group_chat">Group Chat</a></li>
                   <li><a href="#join_with_us">Join with Us</a></li>
                   <li><a href="#gettouch">Get in Touch</a></li>
                 </ul>
@@ -334,15 +353,45 @@
         </div>
 
 
+        <div id="group_chat" class="row">
+          chat with us
+          <ul id="messages"></ul>
+          <form action="/" method="POST" id="chatForm">
+            <input id="txt" autocomplete="off" autofocus="on" oninput="isTyping()" placeholder="type your message here..." /><button>Send</button>
+          </form>
+          <script>
+                  var socket = io.connect('http://localhost:3000'); //for running locally with server.js
+                  // var socket = io.connect('http://localhost:3000'); // for running with chat.js
+                  // submit text message without reload/refresh the page
+                  $('form').submit(function(e){
+                      e.preventDefault(); // prevents page reloading
+                      socket.emit('chat_message', $('#txt').val());
+                      $('#txt').val('');
+                      return false;
+                  });
+                  // append the chat text message
+                  socket.on('chat_message', function(msg){
+                      $('#messages').append($('<li>').html(msg));
+                  });
+                  // append text if someone is online
+                  socket.on('is_online', function(username) {
+                      $('#messages').append($('<li>').html(username));
+                  });
+                  // ask username
+                  var username = prompt('Please tell me your name');
+                  socket.emit('username', username);
+          </script>
+        </div>
         <div class="socialMedia-cl">
           <div class="container contain-cl">
-            <div class="row" id="gettouch">
-              <div class="col-md-12 header-text">
+            <div class="row">
+              <div id ="gettouch" class="col-md-12 header-text">
                 <h3>Get in Touch</h3>
                 <p>Reach out to us for any questions you have.</p>
               </div>
             </div>
           </div>
+          
           <div class="container contain-cl">
             <div class="row">
               <div class="col-md-8 socialmedia-link-cl">
