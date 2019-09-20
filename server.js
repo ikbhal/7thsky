@@ -118,12 +118,6 @@ io.sockets.on('connection', function(socket) {
 
 // chat end
 app.use(express.static("public"));
-<<<<<<< HEAD
-//app.listen(process.env.PORT || 3000);
-
 const server = http.listen(3000, function() {
     console.log('listening on *:3000');
 });
-=======
-app.listen(process.env.PORT || 3000);
->>>>>>> efdefbd691f28452a3787dab6bff8c81b47a24e8
