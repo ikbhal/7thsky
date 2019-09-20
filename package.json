@@ -1,7 +1,6 @@
 {
-  "name": "7thsky",
+  "name": "7thsky_practice_node_chat",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,10 +17,13 @@
   },
   "homepage": "https://github.com/ikbhal/7thsky#readme",
   "dependencies": {
+    "ejs": "^2.7.1",
     "express": "^4.17.1",
+    "socket.io": "^2.2.0",
     "tingodb": "^0.6.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
-  }
+  },
+  "description": ""
 }

@@ -6,7 +6,9 @@ var db = new Engine.Db('db/7thsky', {});
 
 // express
 const express = require('express');
-var app = express();
+const app = express();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 //app.use(express.urlencoded());
 app.use(express.json());
@@ -88,6 +90,31 @@ app.post('/coach_contact_us', function(req, res) {
         }
   })
 });
+// chat begin
+app.get('/chat', function(req, res) {
+    res.render('index.ejs');
+});
 
+io.sockets.on('connection', function(socket) {
+    socket.on('username', function(username) {
+        socket.username = username;
+        io.emit('is_online', '🔵 <i>' + socket.username + ' join the chat..</i>');
+    });
+
+    socket.on('disconnect', function(username) {
+        io.emit('is_online', '🔴 <i>' + socket.username + ' left the chat..</i>');
+    })
+
+    socket.on('chat_message', function(message) {
+        io.emit('chat_message', '<strong>' + socket.username + '</strong>: ' + message);
+    });
+
+});
+
+// chat end
 app.use(express.static("public"));
-app.listen(process.env.PORT || 3000);
+//app.listen(process.env.PORT || 3000);
+
+const server = http.listen(3000, function() {
+    console.log('listening on *:3000');
+});
