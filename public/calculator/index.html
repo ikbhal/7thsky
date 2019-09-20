@@ -1,0 +1,111 @@
+<html>
+
+	<head>
+	<script>
+var workingDaysPerMonth = 30;
+var workingHoursPerDay = 4;
+var perHourCharge = 10;
+var total;
+		
+function calculate() {
+  workingDaysPerMonth = document.getElementById("workingDaysPerMonth").value;
+  workingHoursPerDay = document.getElementById("workingHoursPerDay").value;
+  perHourCharge = document.getElementById("perHourCharge").value;
+	
+  total = workingDaysPerMonth * workingHoursPerDay * perHourCharge;
+  addToHistory();
+}
+
+function addToHistory() {
+  var node = document.createElement("LI");                 // Create a <li> node
+  var textnode = document.createTextNode("days:" +  workingDaysPerMonth 
+    + "; hours per day = " + workingHoursPerDay	 
+    + "; Per Hour Charge = " + perHourCharge
+    + "; Total = " + total);         // Create a text node
+  node.appendChild(textnode);                              // Append the text to <li>
+  document.getElementById("results_list").appendChild(node);     // Append <li> to <ul> with id="myList"
+}
+		
+function earningTable() {
+  workingDaysPerMonth = 25;
+  workingHoursPerDay = 4;
+  perHourCharge = 10;
+  total;
+  var localPerHourCharge = perHourCharge; 
+  var perHourChargeStep =5;
+  for(;localPerHourCharge<=60; localPerHourCharge = localPerHourCharge + perHourChargeStep) {
+    total = workingDaysPerMonth * workingHoursPerDay * localPerHourCharge;
+    var node = document.createElement("LI");                 // Create a <li> node
+    var textnode = document.createTextNode("days:" +  workingDaysPerMonth 
+      + "; hours per day = " + workingHoursPerDay	 
+      + "; Per Hour Charge = " + localPerHourCharge
+      + "; Total = " + total);
+    node.appendChild(textnode);
+    document.getElementById("earning_list").appendChild(node);
+  }	  
+	  
+}
+		
+function hourChange(newVal) {
+	perHourCharge = newVal;
+	addToHistory();
+	/*
+	https://stackoverflow.com/questions/18544890/onchange-event-on-input-type-range-is-not-triggering-in-firefox-while-dragging
+<input type="range" min="5" max="10" step="1" 
+	
+   oninput="showVal(this.value)" onchange="showVal(this.value)">
+   
+   function showVal(newVal){
+  document.getElementById("valBox").innerHTML=newVal;
+}
+   */
+}		
+	
+	</script>
+	</head>
+	<body>
+		<h3>Calculate How much you earn - employee </h3>
+		<p>Your work will start from early morning 3am , end at 7am </p>
+		<p>If you hare more time you can work for 8hours: 3am to 12am, 8am to 9am break <p>
+		<p>You will paid daily through google</p>
+		<p>Our clients are startup , professionals</p>
+		<p>Our employee are job hunting freshers, houewifes</p>
+		<p>No need to come to office</p>
+		<p>work from laptop, mobile</p>
+		<p>Requirement: Internet + laptop</p>
+
+		<form >
+			<input type="text" name="workingDaysPerMonth" value="25" id ="workingDaysPerMonth" 
+			       placeholder="How many days you want to work per month?"/>
+			<br>
+			<input type="text" name="workingHoursPerDay" value="4" id ="workingHoursPerDay" 
+			       placeholder="How many hours you work for day?"/>
+			<br>
+			
+			<input type="text" name="perHourCharge" id="perHourCharge" value="10" 
+			       placeholder="What you charge per hour?"/> or change in range :
+			<input type="range" min="1" max="60" value="10" class="slider" id="perHourChargeRange"
+			       onchange="hourChange(this.value)">
+			<br>
+			<button type="button" onclick="calculate()">Calculate</button>
+		</form>
+		
+		<div>
+			<h4>Results</h4>
+			<ul id="results_list">
+				
+			</ul>
+			
+			<h4>Earning Table</h4>
+			<ul id="earning_list">
+				
+			</ul>
+		</div>
+<script>
+// build earnig table 		
+earningTable();
+</script>
+	</body>
+</html>
+
+
