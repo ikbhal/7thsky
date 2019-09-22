@@ -359,11 +359,12 @@
           chat with us
           <ul id="messages"></ul>
           <form action="/" method="POST" id="chatForm">
-            <input id="txt" autocomplete="off" autofocus="on" oninput="isTyping()" placeholder="type your message here..." /><button>Send</button>
+            <input id="txt" autocomplete="off" autofocus="on" placeholder="type your message here..." /><button>Send</button>
           </form>
           <script>
-                  var socket = io.connect('http://localhost:3000'); //for running locally with server.js
+                  //var socket = io.connect('http://localhost:3000'); //for running locally with server.js
                   // var socket = io.connect('http://localhost:3000'); // for running with chat.js
+                  var socket = io.connect('http://7thsky.in'); //for running locally with server.js
                   // submit text message without reload/refresh the page
                   $('form').submit(function(e){
                       e.preventDefault(); // prevents page reloading
