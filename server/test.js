@@ -6,8 +6,12 @@ var router = express.Router();
 router.post("/save", function(req, res){res.send("will save soon");});
 router.post("/run", function(req, res){
     var test = req.body;
+    console.log("test:" , test);
+    
     var code = test.code;
+    console.log("code:" , code);
     var stdinput = test.stdinput || "";    
+    console.log("stdinput:" , stdinput); 
     // 1 create file with code variable    
     fs.writeFile("/tmp/test.c", code, function(err) {
         if(err) {
