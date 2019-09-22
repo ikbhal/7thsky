@@ -6,8 +6,8 @@
 $(document).ready(function(){
   $("#btnRun").click(function(){
       console.log("run button clicked");
-      var code = $('#code');
-      var stdinput = $('#stdinput');
+      var code = $('#code').val();
+      var stdinput = $('#stdinput').val();
 
       var test = { code: code, stdinput: stdinput};
       console.log(test);
@@ -15,7 +15,8 @@ $(document).ready(function(){
       $.post("http://7thsky.in/test/run", test, function(data, status){
         console.log("server response for run test api " + data + ", status: " + status);
         //$("#result").text("result will come soon");
-        $("#result").text(data);
+        $("#result").text(data.result);
+        $("#error").text(data.error);
       });
   });
 });
@@ -33,6 +34,9 @@ $(document).ready(function(){
   <br>
   Result<br>
   <p id="result">
+
+  Error<br>
+  <p id="error">
 
   </p>
 

@@ -16,7 +16,7 @@ router.post("/run", function(req, res){
         console.log("The file was saved!");
     });
     // 1.2 create stdinput file    
-    fs.writeFile("/tmp/stdinput", stdinput, function(err) {
+    fs.writeFile("/tmp/stdinput.txt", stdinput, function(err) {
         if(err) {
             return console.log(err);
         }
@@ -32,7 +32,7 @@ router.post("/run", function(req, res){
         console.error(`stderr: ${stderr}`);
     });
     // 2.1 run the test file
-    exec('/tmp/test  < /tmp/stdinput ', (error, stdout, stderr) => {
+    exec('/tmp/test  < /tmp/stdinput.txt ', (error, stdout, stderr) => {
         if (error) {
             console.error(`exec error: ${error}`);
             return;
@@ -42,15 +42,15 @@ router.post("/run", function(req, res){
         // $3. send the success resposne
         // $3.2 send the compilation error
         if(stdout){
-            res.send(stdout);
+            res.json({result:stdout, error:""});
         }
         if(stderr){
-            res.send(stderr);
+            res.json({error:stderr, result:""});
         }
     });    
 
     // 4.delete file
-    var filePath = '/tmp/test1'; 
+    var filePath = '/tmp/test'; 
     fs.unlink(filePath, function(err){
             if(err) return console.log(err);
             console.log('file deleted successfully');
