@@ -11,8 +11,12 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-//app.use(express.urlencoded());
 app.use(express.json());
+
+// TEST student code
+var test = require('./server/test');
+app.use('/test', test);
+
 
 app.get('/ping', function(req, res){
     res.send("pong");
