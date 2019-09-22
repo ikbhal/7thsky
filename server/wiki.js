@@ -2,6 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
+//router.use(express.json());
 
 // Home page route.
 router.get('/', function (req, res) {
@@ -9,8 +10,16 @@ router.get('/', function (req, res) {
 })
 
 // About page route.
-router.get('/about', function (req, res) {
-  res.send('About this wiki');
+router.post('/about', function (req, res) {
+  var test = req.body;
+  console.log("test"); console.log(test);
+  var code = test.code;
+  console.log("code:" + code);
+  var stdinput = test.stdinput;
+  console.log("stdinput:" + stdinput);
+  //res.send('About this wiki');
+  var response = {result:"towheed name", error: "no error"};
+  res.json(response);
 })
 
 module.exports = router;

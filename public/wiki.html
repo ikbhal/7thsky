@@ -12,11 +12,11 @@ $(document).ready(function(){
       var test = { code: code, stdinput: stdinput};
       console.log(test);
       console.log("sent to server using ajax");
-   
-      $.ajax({ method: "post", url: "http://7thsky.in/test/run", data: JSON.stringify(test),
+      $.ajax({ method: "post", url: "http://localhost:3000/wiki/about", data: JSON.stringify(test),
         contentType : "application/json", dataType: "json"
-      }).done( function(data, status){
+        }).done( function(data, status){
         console.log("server response for run test api " + data + ", status: " + status);
+        //$("#result").text("result will come soon");
         $("#result").text(data.result);
         $("#error").text(data.error);
       });
@@ -26,9 +26,9 @@ $(document).ready(function(){
 </head>
 <body>
 
-<form action="http://7thsky.in/test/run" method="post">
+<form >
   <button type="button" id="btnRun">Run</button></form> 
-  Code<br>
+  <h5>Code</h5>
   <textarea id ="code" rows="15" cols="50">
 #include <stdio.h>
 int main(){    
@@ -40,15 +40,15 @@ int main(){
 }
   </textarea>
   <br>
-  Input<br>
+  <h5>Input</h5>
   <textarea id ="stdinput" rows="5" cols="50">
 Ali Baba
   </textarea>
   <br>
-  Result<br>
+  <h5>Result</h5>
   <p id="result"></p>
 
-  Error<br>
+  <h5>Error</h5>
   <p id="error">
 
   </p>

@@ -17,6 +17,10 @@ app.use(express.json());
 var test = require('./server/test');
 app.use('/test', test);
 
+// wiki practice 
+var wiki = require('./server/wiki');
+app.use('/wiki', wiki);
+
 
 app.get('/ping', function(req, res){
     res.send("pong");
