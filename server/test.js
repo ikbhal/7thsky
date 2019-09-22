@@ -14,25 +14,35 @@ router.post("/run", function(req, res){
             return console.log(err);
         }
         console.log("The file was saved!");
+        // 1.2 create stdinput file    
+        fs.writeFile("/tmp/stdinput.txt", stdinput, function(err) {
+            if(err) {
+                return console.log(err);
+            }
+            console.log("The stdinput file was saved!");
+            compileTest(res);
+        });
     });
-    // 1.2 create stdinput file    
-    fs.writeFile("/tmp/stdinput.txt", stdinput, function(err) {
-        if(err) {
-            return console.log(err);
-        }
-        console.log("The stdinput file was saved!");
-    });
-    // 2. run the command gcc hello.c -o hello
-    exec('gcc -o /tmp/test /tmp/test.c', (error, stdout, stderr) => {
+        
+});
+
+function compileTest(res) {
+     // 2. run the command gcc hello.c -o hello
+     exec('gcc -o /tmp/test /tmp/test.c', (error, stdout, stderr) => {
         if (error) {
             console.error(`exec error: ${error}`);
             return;
         }
         console.log(`stdout: ${stdout}`);
         console.error(`stderr: ${stderr}`);
+
+        runTest(res);
     });
-    // 2.1 run the test file
-    exec('/tmp/test  < /tmp/stdinput.txt ', (error, stdout, stderr) => {
+}
+
+function runTest(res) {
+     // 2.1 run the test file
+     exec('/tmp/test  < /tmp/stdinput.txt ', (error, stdout, stderr) => {
         if (error) {
             console.error(`exec error: ${error}`);
             return;
@@ -47,13 +57,16 @@ router.post("/run", function(req, res){
         if(stderr){
             res.json({error:stderr, result:""});
         }
-    });    
 
-    // 4.delete file
+         // 4.delete file
+         deleteTestRunFile();
+    });    
+}
+function deleteTestRunFile() {
     var filePath = '/tmp/test'; 
     fs.unlink(filePath, function(err){
             if(err) return console.log(err);
             console.log('file deleted successfully');
     });
-});
+}
 module.exports = router;
