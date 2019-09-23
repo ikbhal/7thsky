@@ -1,0 +1,21 @@
+[
+{
+    "descripton " : "sum of n - positive number n",
+    "input": "3",
+    "output": "6",
+    "output_with_messages": "Sum of the integers = 6"
+}
+,
+{
+    "descripton " : "sum of n - n is zero",
+    "input": "0",
+    "output": "0",
+    "output_with_messages": "Sum of the integers = 0"
+},
+{
+    "descripton " : "sum of n - n is negative",
+    "input": "-4",
+    "output": "0",
+    "output_with_messages": "Sum of the integers = 0"
+}
+]

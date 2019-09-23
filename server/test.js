@@ -4,6 +4,14 @@ const { exec } = require('child_process');
 var express = require('express');
 var router = express.Router();
 router.post("/save", function(req, res){res.send("will save soon");});
+router.post("/test", function(req, res){
+  res.send("will test all test cases for code");
+
+  // create code file from code
+  // list of test cases -> each test case input, output exepect
+  
+});
+
 router.post("/run", function(req, res){
     var test = req.body;
     console.log("test:" , test);
