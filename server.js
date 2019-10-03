@@ -122,6 +122,10 @@ io.sockets.on('connection', function(socket) {
         io.emit('chat_message', '<strong>' + socket.username + '</strong>: ' + message);
     });
 
+    socket.on('discuss_message', function(message) {
+        io.emit('discuss_message', message);
+    });
+
 });
 
 // chat end
