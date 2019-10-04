@@ -7,10 +7,9 @@ $( document ).ready(function() {
 function startClass(){
     alert("Hi welcome to class\n " + 
         "Please follow todo list\n " +
-        "1)ready with challenge\n " +
-        "2)learning material \n " + 
-        "3)record video \n " + 
-        "4) upload to youtube \n" +
-        "5)upload to github. \n" +
-        " class will close in 30 minutes.");
+        "1) Record video -> Upload to Youtube \n " + 
+        "2) Give Challenge\n " +
+        "3) Learning links(tutorials) \n " + 
+        "4) Upload to GitHub 7thsky Assignments. \n" +
+        ">>class will close in 30 minutes.");
 }
