@@ -126,6 +126,10 @@ io.sockets.on('connection', function(socket) {
         io.emit('discuss_message', message);
     });
 
+    socket.on('class_message', function(message) {
+        io.emit('class_message', message);
+    });
+
 });
 
 // chat end

@@ -1,0 +1,44 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="/css/class_timer.css">
+      <script src="../../socket.io/socket.io.js"></script>
+      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  
+    <script>
+      console.log("collabedit");
+    </script>
+    <script src="/js/class/timer.js"></script>
+    <script src="/js/class/reminder_before_class_close.js"></script>
+    <script>
+      $(document).ready(function(){
+          $("#editArea").on("input", function(e){
+              console.log(e.target.value);
+              socket.emit("class_message", $("#editArea").val());
+            });
+      });
+
+      var socket = io.connect("http://7thsky.in"); //for running locally with server.js
+      //var socket = io.connect("http://localhost:3000");
+      //var socket = io.connect('http://localhost:3000'); //for running locally with server.js
+      // var socket = io.connect('http://localhost:3000'); // for running with chat.js
+      // submit text message without reload/refresh the page
+      // append the chat text message
+      socket.on("class_message", function(msg) {
+        //$("#messages").append($("<li>").html(msg));
+        $("#editArea").val(msg);
+      });
+      // append text if someone is online
+      socket.on("is_online", function(username) {
+        $("#messages").append($("<li>").html(username));
+      });
+      // ask username
+      //var username = prompt("Please tell me your name");
+      //socket.emit("username", username);
+    </script>
+  </head>
+  <body>
+    <h1>Class 30 minutes</h1>
+    <div>Time left = <span id="timer"></span></div>
+    <textarea id="editArea" cols="100" rows="30"> </textarea>
+  </body>
+</html>
