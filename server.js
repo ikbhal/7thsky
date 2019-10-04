@@ -130,6 +130,10 @@ io.sockets.on('connection', function(socket) {
         io.emit('class_message', message);
     });
 
+    socket.on('class_end', function(message) {
+        io.emit('class_message', message);
+    });
+
 });
 
 // chat end
