@@ -1,5 +1,4 @@
-//var classClosingInMinutes = 3-;
-var classClosingInMinutes = 1;
+var classClosingInMinutes = 30;
 $( document ).ready(function() {    
     console.log( "class end .js code!" );
     setTimeout(closeClass, classClosingInMinutes  * 1000);

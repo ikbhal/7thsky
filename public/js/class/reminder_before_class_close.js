@@ -1,5 +1,5 @@
-//var classCloseRemindMinters = 25;
-var classCloseRemindMinters = 1;
+var classCloseRemindMinters = 25;
+//var classCloseRemindMinters = 1;
 
 $(document).ready(function() {
   console.log("class close reminder .js code!");
