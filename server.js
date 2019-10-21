@@ -17,6 +17,23 @@ app.use(express.json());
 var test = require('./server/test');
 app.use('/test', test);
 
+// python 
+app.get('/run_python', runPython);
+function runPython(req, res) {
+    // using spawn instead of exec, prefer a stream over a buffer
+    // to avoid maxBuffer issue
+    var spawn = require("child_process").spawn;
+    var process = spawn('python', ["./files/python/d_alembert.py",
+      req.query.funds, // starting funds
+      req.query.size, // (initial) wager size
+      req.query.count, // wager count — number of wagers per sim
+      req.query.sims // number of simulations
+    ]);
+    process.stdout.on('data', function (data) {
+      res.send(data.toString());
+    });
+  }
+
 // wiki practice 
 var wiki = require('./server/wiki');
 app.use('/wiki', wiki);
@@ -136,23 +153,6 @@ io.sockets.on('connection', function(socket) {
 
 });
 
-
-// python 
-app.get('/dalembert', callD_alembert);
-function callD_alembert(req, res) {
-    // using spawn instead of exec, prefer a stream over a buffer
-    // to avoid maxBuffer issue
-    var spawn = require("child_process").spawn;
-    var process = spawn('python', ["../files/python/d_alembert.py",
-      req.query.funds, // starting funds
-      req.query.size, // (initial) wager size
-      req.query.count, // wager count — number of wagers per sim
-      req.query.sims // number of simulations
-    ]);
-    process.stdout.on('data', function (data) {
-      res.send(data.toString());
-    });
-  }
 // chat end
 app.use(express.static("public"));
 const server = http.listen(3000, function() {
