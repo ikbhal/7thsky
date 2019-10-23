@@ -11,10 +11,14 @@ var firebaseConfig = {
     appId: "1:810681665524:web:b32bf854943dfee19ddba1",
     measurementId: "G-5MV3LSVBVV"
 };
+var db = null;
 
 // TODO onready function
 $( document ).ready(function() {
     // Handler for .ready() called.
+    firebase.initializeApp(firebaseConfig);
+    db = firebase.firestore();
+
     $('.student_contact_us_form_response').hide();
     $('#student_contact_us_form').submit(function(e) {
         e.preventDefault();
