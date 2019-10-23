@@ -17,6 +17,7 @@ $( document ).ready(function() {
     // Handler for .ready() called.
     $('.student_contact_us_form_response').hide();
     $('#student_contact_us_form').submit(function(e) {
+        e.preventDefault();
         //studentContactUs();
         studentContactUsFireBase();
         return false;
